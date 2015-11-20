@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Ama y treasciende</title>
+    {% block headerAssets %}
+        <!-- core CSS -->
+        <link href="{{ asset('bundles/tecaytportal/css/bootstrap.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('bundles/tecaytportal/css/font-awesome.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('bundles/tecaytportal/css/animate.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('bundles/tecaytportal/css/prettyPhoto.css') }}" rel="stylesheet">
+        <link href="{{ asset('bundles/tecaytportal/css/main.css') }}" rel="stylesheet">
+        <link href="{{ asset('bundles/tecaytportal/css/responsive.css') }}" rel="stylesheet">
+        <!--[if lt IE 9]>
+        <script src="{{ asset('bundles/tecaytportal/js/html5shiv.js') }}"></script>
+        <script src="{{ asset('bundles/tecaytportal/js/respond.min.js') }}"></script>
+        <![endif]-->
+        <link rel="shortcut icon" href="{{ asset('bundles/tecaytportal/images/ico/favicon.ico') }}">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ asset('bundles/tecaytportal/images/ico/apple-touch-icon-144-precomposed.png')}}">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ asset('bundles/tecaytportal/images/ico/apple-touch-icon-114-precomposed.png')}}">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ asset('bundles/tecaytportal/images/ico/apple-touch-icon-72-precomposed.png')}}">
+        <link rel="apple-touch-icon-precomposed" href="{{ asset('bundles/tecaytportal/images/ico/apple-touch-icon-57-precomposed.png')}}">
+    {% endblock %}
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+    <!-- Header -->
+    {% include('TecAytPortalBundle:Common:header.html.twig') %}
+
+    {% block content %} {% endblock %}
+
+    <!-- Footer -->
+    {% include('TecAytPortalBundle:Common:footer.html.twig') %}
+
+</div><!-- ./wrapper -->
+{% block footerAssets %}
+    <script src="{{ asset('bundles/tecaytportal/js/jquery.js')}}"></script>
+    <script src="{{ asset('bundles/tecaytportal/js/bootstrap.min.js')}}"></script>
+    <script src="{{ asset('bundles/tecaytportal/js/jquery.prettyPhoto.js')}}"></script>
+    <script src="{{ asset('bundles/tecaytportal/js/jquery.isotope.min.js')}}"></script>
+    <script src="{{ asset('bundles/tecaytportal/js/main.js')}}"></script>
+    <script src="{{ asset('bundles/tecaytportal/js/wow.min.js')}}"></script>
+{% endblock %}
+</body>
+</html>

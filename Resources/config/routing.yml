@@ -1,0 +1,40 @@
+##  SECURITY
+tec_ayt_portal_login:
+    pattern:    /login
+    defaults:   { _controller: TecAytPortalBundle:Security:login }
+    
+tec_ayt_portal_login_check:
+    pattern:    /login/check
+    
+tec_ayt_portal_logout:
+    pattern:    /logout
+
+## Main
+tec_ayt_portal_main_home:
+    pattern:    /
+    defaults:   { _controller: TecAytPortalBundle:Main:home }
+
+tec_ayt_portal_main_about:
+    pattern:    /about
+    defaults:   { _controller: TecAytPortalBundle:Main:about }
+
+tec_ayt_portal_main_contact:
+    pattern:    /contact
+    defaults:   { _controller: TecAytPortalBundle:Main:contact }
+
+## EVENT
+
+tec_ayt_portal_event_list:
+    pattern:    /event
+    defaults:   { _controller: TecAytPortalBundle:Event:list }
+
+## ALBUM
+
+tec_ayt_portal_album_list:
+    pattern:    /album
+    defaults:   { _controller: TecAytPortalBundle:Album:list }
+
+## DOWNLOAD
+tec_ayt_portal_download:
+    pattern:    /download/{id}/{class}
+    defaults:   { _controller: TecAytPortalBundle:File:download }

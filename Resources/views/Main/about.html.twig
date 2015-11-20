@@ -1,0 +1,247 @@
+{% set navbarActive = 'about' %}
+{% extends 'TecAytPortalBundle:Common:layout.html.twig' %}
+
+{% block content %}
+    <section id="about-us" class="mission">
+        <div class="container">
+            <div class="center wow fadeInDown">
+                <h2>MISIÓN</h2>
+                <p class="lead">Nuestra misión es abrir espacios de aprendizaje, colaboración y mejora para que el adulto mayor viva en forma productiva <br>
+                    en los ámbitos social, político, económico y cultural, partiendo del concepto del ser humano en sus tres dimensiones:
+                    <br> física, psicológica y espiritual</p>
+            </div>
+
+            <!-- about us slider -->
+            <div id="about-slider">
+                <div class="carousel slide">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators visible-xs">
+                        <li data-target="#carousel-slider" data-slide-to="0" class="active"></li>
+                    </ol>
+
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <img src="{{ asset('bundles/tecaytportal/images/oldsite/Nosotros.png')}}" class="img-responsive" alt="">
+                        </div>
+                    </div>
+                </div> <!--/#carousel-slider-->
+            </div><!--/#about-slider-->
+
+            <!-- Our Skill -->
+            <div class="skill-wrap clearfix">
+                <div class="center wow fadeInDown" id="vision">
+                    <h2>VISIÓN</h2>
+                    <p class="lead">Nuestra visión es ser un grupo precursor de cambios en beneficio de la sociedad</p>
+                </div>
+            </div><!--/.our-skill-->
+        </div>
+    </section><!--/#bottom-->
+    <section id="valores-section">
+        <!-- Our Skill -->
+        <div id="valores" class="skill-wrap clearfix">
+
+            <div class="center wow fadeInDown">
+                <h2>VALORES</h2>
+                <p class="lead">Actuamos bajo los principios de <b>honestidad, responsabilidad y respeto</b>, aportando la experiencia multidisciplinaria del capital humano de sus miembros. </p>
+                <p class="lead valor">AMA y trasciende tiene 5 importantes estrategias generales: </p>
+            </div>
+            <div class="row">
+
+                <div class="col-sm-2 col-sm-offset-1">
+                    <div class="sinlge-skill wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+                        <div class="joomla-skill">
+                            <p>Asegurar la sustentabilidad de la asociación</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-2">
+                    <div class="sinlge-skill wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+                        <div class="joomla-skill">
+                            <p>Fomentar el bienestar integral de los asociados en particular, y del adulto mayor en general</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-2">
+                    <div class="sinlge-skill wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                        <div class="html-skill">
+                            <p>Crear redes y espacios de colaboración</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-2">
+                    <div class="sinlge-skill wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="900ms">
+                        <div class="css-skill">
+                            <p>Promover la creatividad y aprendizaje del Adulto Mayor</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-2">
+                    <div class="sinlge-skill wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="1200ms">
+                        <div class="wp-skill">
+                            <p>Intervenir en políticas publicas para influir y recuperar espacios sociales</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div><!--/.our-skill-->
+    </section><!--/about-us-->
+
+    <section id="about-us" class="directive">
+        <div class="container">
+            <!-- our-team -->
+            <div class="team">
+                <div class="center wow fadeInDown">
+                    <h2>CONSEJO DIRECTIVO</h2>
+                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+                </div>
+
+                <div class="row clearfix">
+                    <div class="col-md-6 col-sm-12">
+                        <div class="single-profile-top wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+                            <div class="media">
+                                <div class="pull-left">
+                                    <a href="#"><img class="media-object" src="{{ asset('bundles/tecaytportal/images/LourdesFrancke.jpg')}}" alt=""></a>
+                                </div>
+                                <div class="media-body">
+                                    <h4>María de  Lourdes Francke Ramm</h4>
+                                    <h5>Presidenta</h5>
+                                </div>
+                            </div><!--/.media -->
+                        </div>
+                    </div><!--/.col-lg-3 -->
+
+
+                    <div class="col-md-6 col-sm-12">
+                        <div class="single-profile-top wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+                            <div class="media">
+                                <div class="pull-left">
+                                    <a href="#"><img class="media-object" src="{{ asset('bundles/tecaytportal/images/Benjamin.jpg')}}" alt=""></a>
+                                </div>
+                                <div class="media-body">
+                                    <h4>Benjamín Fuentes Roja</h4>
+                                    <h5>Vicepresidente</h5>
+                                </div>
+                            </div><!--/.media -->
+                        </div>
+                    </div><!--/.col-lg-3 -->
+                </div> <!--/.row -->
+                <div class="row team-bar">
+                    <div class="first-one-arrow hidden-xs">
+                        <hr>
+                    </div>
+                    <div class="first-arrow hidden-xs">
+                        <hr> <i class="fa fa-angle-up"></i>
+                    </div>
+                    <div class="second-arrow hidden-xs">
+                        <hr> <i class="fa fa-angle-down"></i>
+                    </div>
+                    <div class="third-arrow hidden-xs">
+                        <hr> <i class="fa fa-angle-up"></i>
+                    </div>
+                    <div class="fourth-arrow hidden-xs">
+                        <hr> <i class="fa fa-angle-down"></i>
+                    </div>
+                </div> <!--skill_border-->
+
+                <div class="row clearfix">
+                    <div class="col-md-4 col-sm-12">
+                        <div class="single-profile-bottom wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="600ms">
+                            <div class="media">
+                                <div class="pull-left">
+                                    <a href="#"><img class="media-object" src="{{ asset('bundles/tecaytportal/images/LourdesGuerrero.jpg')}}" alt=""></a>
+                                </div>
+
+                                <div class="media-body">
+                                    <h5>María de Lourdes Guerrero Gutiérrez</h5>
+                                    <h5>Secretaria</h5>
+                                </div>
+                            </div><!--/.media -->
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-12">
+                        <div class="single-profile-bottom wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="600ms">
+                            <div class="media">
+                                <div class="pull-left">
+                                    <a href="#"><img class="media-object" src="{{ asset('bundles/tecaytportal/images/MaxGarza.jpg')}}" alt=""></a>
+                                </div>
+                                <div class="media-body">
+                                    <h5>Max Garza Valle</h5>
+                                    <h5>Tesorero</h5>
+                                </div>
+                            </div><!--/.media -->
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-12">
+                        <div class="single-profile-bottom wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="600ms">
+                            <div class="media">
+                                <div class="pull-left">
+                                    <a href="#"><img class="media-object" src="{{ asset('bundles/tecaytportal/images/Anita.jpg')}}" alt=""></a>
+                                </div>
+                                <div class="media-body">
+                                    <h5>Ana María Rodríguez Hernández</h5>
+                                    <h5>Comisario</h5>
+                                </div>
+                            </div><!--/.media -->
+                        </div>
+                    </div>
+                </div>	<!--/.row-->
+            </div><!--section-->
+        </div><!--/.container-->
+    </section><!--/about-us-->
+
+    <section id="valores-section">
+        <!-- Our Skill -->
+        <div id="partnerships" class="skill-wrap clearfix">
+            <div class="container">
+            <div class="center wow fadeInDown partnerdiv">
+                <h2>ALIANZAS Y CONVENIOS</h2>
+                <div class="pricing-area text-center">
+                    <div class="row">
+                        <div class="col-sm-4 plan price-two wow fadeInDown animated onepartner" style="visibility: visible; animation-name: fadeInDown;">
+                            <ul>
+                                <li class="heading-two partners">
+                                    <h2>Municipio de San Pedro</h2>
+                                    <span>INFAMILIA</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-4 plan price-one wow fadeInDown animated onepartner" style="visibility: visible; animation-name: fadeInDown;">
+                            <ul>
+                                <li class="heading-one partners">
+                                    <h2>Instituto Tecnológico y de Estudios Superiores de Monterrey</h2>
+                                    <span></span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-4 plan price-three wow fadeInDown animated onepartner" style="visibility: visible; animation-name: fadeInDown;">
+                            <ul>
+                                <li class="heading-three partners">
+                                    <h2>STPS</h2>
+                                    <span>Red de Vinculación Laboral</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="center wow fadeInDown">
+                <h2>NUESTRA LABOR</h2>
+                <p class="lead">Para el logro de sus objetivos AMA trabaja de diferentes formas:</p>
+                <p class="lead">Colabora con otras organizaciones publicas y privadas que realizan proyectos o actividades en beneficio de los adultos mayores como Infamilia del Municipio de San Pedro, Red de Vinculación Laboral coordinada por la STPS, Comisión Estatal de Derechos Humanos, Gericare, ACARE, EZER, etc.</p>
+                <p class="lead">A través de Comisiones que promuevan oportunidades de participación o mejoren la calidad de vida de los adultos mayores en actividades Educativas, Emprendimiento, Voluntariado, Medios de Comunicación, Mediación, Cultura y Políticas Publicas.</p>
+                <p class="lead">Organizando actividades institucionales como el Seminario Vida y Salud y en colaboración con el ITESM el Reconocimiento al Adulto Mayor.</p>
+                <p class="lead">Participando en Foros, Congresos, Trabajos de Investigación y encuestas sobre la situación y mejoramiento del adulto mayor.</p>
+            </div>
+            </div>
+
+        </div><!--/.our-skill-->
+    </section><!--/about-us-->
+
+{% endblock %}

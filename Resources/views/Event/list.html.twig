@@ -1,0 +1,74 @@
+{% set navbarActive = 'event' %}
+{% extends 'TecAytPortalBundle:Common:layout.html.twig' %}
+
+{% block headerAssets %}
+    {{ parent() }}
+    <link href="{{ asset('bundles/tecaytportal/css/event-list.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    <section class="events">
+            <div class="center wow fadeInDown event-title">
+                <h2>PRÓXIMOS EVENTOS</h2>
+            </div>
+            <div class="row wow fadeInDown event">
+                <div class="[ col-xs-12 col-sm-offset-2 col-sm-8 ]">
+                    <ul class="event-list">
+                        {% for event in futureEvents %}
+                        <li>
+                            <time datetime="{{ event.date|date('Y-m-d H:i:s') }}">
+                                <span class="day">{{ event.date|date('d') }}</span>
+                                <span class="month">{{ event.date|date('M') }}</span>
+                                <span class="year">{{ event.date|date('Y') }}</span>
+                                <span class="time">{{ event.date|date('g:i A') }}</span>
+                            </time>
+                            <div class="info">
+                                <h2 class="title">{{ event.name }}</h2>
+                                <p class="desc">{{ event.description }}</p>
+                                <p class="desc">Hora: {{ event.date|date('g:i A') }}</p>
+                                <ul>
+                                    <li style="width:50%;"><a href="{{ path('tec_ayt_portal_download', {'id': event.eventId, 'class': 'Event'}) }}"><span class="fa fa-download"></span> Download</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        {% else %}
+                        <div class="center wow fadeInDown event-title">
+                            <h2>LO SENTIMOS NO HAY EVENTOS PRÓXIMOS</h2>
+                        </div>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div class="center wow fadeInDown event-title">
+                <h2>EVENTOS ANTERIORES</h2>
+            </div>
+            <div class="row wow fadeInDown event">
+                <div class="[ col-xs-12 col-sm-offset-2 col-sm-8 ]">
+                    <ul class="event-list">
+                        {% for event in pastEvents %}
+                            <li>
+                                <time datetime="{{ event.date|date('Y-m-d H:i:s') }}">
+                                    <span class="day">{{ event.date|date('d') }}</span>
+                                    <span class="month">{{ event.date|date('M') }}</span>
+                                    <span class="year">{{ event.date|date('Y') }}</span>
+                                    <span class="time">{{ event.date|date('g:i A') }}</span>
+                                </time>
+                                <div class="info">
+                                    <h2 class="title">{{ event.name }}</h2>
+                                    <p class="desc">{{ event.description }}</p>
+                                    <p class="desc">Hora: {{ event.date|date('g:i A') }}</p>
+                                    <ul>
+                                        <li style="width:50%;"><a href="{{ path('tec_ayt_portal_download', {'id': event.eventId, 'class': 'Event'}) }}"><span class="fa fa-download"></span> Download</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        {% else %}
+                            <div class="center wow fadeInDown event-title">
+                                <h2>LO SENTIMOS NO HAY EVENTOS PASADOS</h2>
+                            </div>
+                        {% endfor %}
+                    </ul>
+                </div>
+        </div>
+    </section>
+{% endblock %}

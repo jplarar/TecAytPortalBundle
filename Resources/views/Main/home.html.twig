@@ -1,0 +1,172 @@
+{% set navbarActive = 'home' %}
+{% extends 'TecAytPortalBundle:Common:layout.html.twig' %}
+
+{% block content %}
+<section id="main-slider" class="no-margin">
+    <div class="carousel slide">
+        <div class="carousel-inner">
+
+            {% for banner in banners %}
+            <div class="item active" style="background-image: url({{ path('tec_ayt_portal_download', {'id': banner.bannerId, 'class': 'Banner'}) }})">
+            </div><!--/.item-->
+            {% endfor %}
+
+        </div><!--/.carousel-inner-->
+    </div><!--/.carousel-->
+    <a class="prev hidden-xs" href="#main-slider" data-slide="prev">
+        <i class="fa fa-chevron-left"></i>
+    </a>
+    <a class="next hidden-xs" href="#main-slider" data-slide="next">
+        <i class="fa fa-chevron-right"></i>
+    </a>
+</section><!--/#main-slider-->
+
+<section id="feature" >
+    <div class="container">
+        <div class="center wow fadeInDown">
+            <h2>Bienvenida</h2>
+            <p class="lead">
+                AMA y trasciende, A.C. es una institución que tiene más de 10 líneas de acción para adultos mayores, y para adultos no necesariamente mayores pero interesados en el tema, entre las que seguramente encontrarás un espacio en el que podrás incorporarte a la sociedad, según tus preferencias, intereses, gustos y habilidades.
+            </p>
+            <p>Te invitamos a que conozcas nuestra asociación en forma activa a través de nuestra página Web.</p>
+        </div>
+    </div><!--/.container-->
+</section><!--/#feature-->
+
+<section id="recent-works">
+    <div class="container">
+        <div class="center wow fadeInDown">
+            <h2>Imagenes Resientes</h2>
+        </div>
+
+        {% for content in contents %}
+        <div class="row">
+            <div class="col-xs-12 col-sm-4 col-md-3">
+                <div class="recent-work-wrap">
+                    <img class="img-responsive" src="{{ path('tec_ayt_portal_download', {'id': content.contentId, 'class': 'Content'}) }}" alt="">
+                    <div class="overlay">
+                        <div class="recent-work-inner">
+                            <h3><a href="#">{{ content.name }}</a> </h3>
+                            <p>{{ content.description }}</p>
+                            <a class="preview" href="{{ path('tec_ayt_portal_download', {'id': content.contentId, 'class': 'Content'}) }}" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div><!--/.row-->
+    </div><!--/.container-->
+</section><!--/#recent-works-->
+
+<section id="services" class="service-item">
+    <div class="container">
+        <div class="center wow fadeInDown">
+            <h2>Redes sociales</h2>
+        </div>
+
+        <div class="row">
+
+            <div class="col-sm-6">
+                <div class="fb-page" data-href="https://www.facebook.com/AMA-y-Trasciende-AC-156507664393027/" data-width="500" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="true"></div>
+            </div>
+            <div class="col-sm-6">
+                <a class="twitter-timeline" href="https://twitter.com/AMAytrasciende" data-widget-id="664952714980229120">Tweets por el @AMAytrasciende.</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+            </div>
+        </div><!--/.row-->
+    </div><!--/.container-->
+</section><!--/#services-->
+
+<section id="content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 wow fadeInDown">
+                <div class="tab-wrap">
+                    <div class="media">
+                        <div class="parrent pull-left">
+                            <ul class="nav nav-tabs nav-stacked">
+                                <li class="active"><a href="#tab1" data-toggle="tab" class="analistic-01">Socio AMA</a></li>
+                                <li class=""><a href="#tab2" data-toggle="tab" class="analistic-02">Socios Amigo AMA</a></li>
+                                <li class=""><a href="#tab3" data-toggle="tab" class="analistic-03">Socio Benefactor</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="parrent media-body">
+                            <div class="tab-content">
+                                <div class="tab-pane fade active in" id="tab1">
+                                    <div class="media">
+                                        <div class="pull-left">
+                                            <img class="img-responsive" src="{{ asset('bundles/tecaytportal/images/oldsite/galerias.jpg')}}">
+                                        </div>
+                                        <div class="media-body">
+                                            <h2>Socio AMA</h2>
+                                            <p>
+                                                Miembro activo participa en las sesiones, colabora en comisiones y paga las cuotas de la Asociación.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane fade" id="tab2">
+                                    <div class="media">
+                                        <div class="pull-left">
+                                            <img class="img-responsive" src="{{ asset('bundles/tecaytportal/images/oldsite/galerias.jpg')}}">
+                                        </div>
+                                        <div class="media-body">
+                                            <h2>Socios Amigo AMA</h2>
+                                            <p>
+                                                Socio virtual con registro en la pagina WEB recibe invitaciones a eventos, publicaciones sobre temas de interés para el adulto mayor y puede colaborar con publicaciones y propuestas a través de los medios digitales de la Asociación.   Puede residir en cualquiera lugar y no tiene compromiso de asistir a reuniones o cubrir cuotas de asociado.
+                                                Consejero Honorifico. Personas con reconocido prestigio moral y profesional que son invitadas por el Comité Directivo para colaborar y promover  la Asociación.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="tab3">
+                                    <div class="media">
+                                        <div class="pull-left">
+                                            <img class="img-responsive" src="{{ asset('bundles/tecaytportal/images/oldsite/galerias.jpg')}}">
+                                        </div>
+                                        <div class="media-body">
+                                            <h2>Socio Benefactor</h2>
+                                            <p>
+                                                Personas físicas o morales interesadas en apoyar económicamente a la Asociación.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <!--/.tab-content-->
+                        </div> <!--/.media-body-->
+                    </div> <!--/.media-->
+                </div><!--/.tab-wrap-->
+            </div><!--/.col-sm-6-->
+        </div><!--/.row-->
+    </div><!--/.container-->
+</section><!--/#content-->
+
+<section id="partner">
+    <div class="container">
+        <div class="center wow fadeInDown">
+            <h2>Nuestros Patrocinadores</h2>
+        </div>
+
+        <div class="partners">
+            <ul>
+                {% for sponsor in sponsors %}
+                <li> <a href="{{ sponsor.url }}"><img class="img-responsive wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms" src="{{ path('tec_ayt_portal_download', {'id': sponsor.sponsorId, 'class': 'Sponsor'}) }}"></a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div><!--/.container-->
+</section><!--/#partner-->
+{% endblock %}
+
+{% block footerAssets %}
+    {{ parent() }}
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+{% endblock %}
