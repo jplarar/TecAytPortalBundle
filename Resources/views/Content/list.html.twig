@@ -6,19 +6,20 @@
     <section id="album">
         <div class="container">
             <div class="center">
-                <h2>Albumes de fotos</h2>
+                <h2>Album {{ album.name }}</h2>
             </div>
 
             <div class="row">
                 <div class="portfolio-items">
-                    {% for album in albums %}
+                    {% for content in contents %}
                         <div class="portfolio-item col-xs-12 col-sm-4 col-md-3">
                             <div class="recent-work-wrap">
-                                <img class="img-responsive gallery" src="{{ path('tec_ayt_portal_download', {'id': album.albumId, 'class': 'Album'}) }}" alt="">
+                                <img class="img-responsive gallery" src="{{ path('tec_ayt_portal_download', {'id': content.contentId, 'class': 'Content'}) }}" alt="">
                                 <div class="overlay">
                                     <div class="recent-work-inner">
-                                        <h3><a href="{{ path('tec_ayt_portal_content_list', {'id': album.albumId}) }}">{{ album.name }}</a></h3>
-                                        <p>{{ album.description }}</p>
+                                        <h3><a href="#">{{ content.name }}</a></h3>
+                                        <p>{{ content.description }}</p>
+                                        <a class="preview" href="{{ path('tec_ayt_portal_download', {'id': content.contentId, 'class': 'Content'}) }}" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
                                     </div>
                                 </div>
                             </div>

@@ -2615,9 +2615,14 @@ shortcodes page css
 }
 
 .gallery {
-  height: 280px;
+  height: 240px;
 }
 
 #album {
   padding-top: 40px;
+  padding-bottom: 70px;
+}
+
+.partner-img{
+  width: 100%;
 }

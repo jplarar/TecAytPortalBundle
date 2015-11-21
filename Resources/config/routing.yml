@@ -34,6 +34,12 @@ tec_ayt_portal_album_list:
     pattern:    /album
     defaults:   { _controller: TecAytPortalBundle:Album:list }
 
+## CONTENT
+
+tec_ayt_portal_content_list:
+    pattern:    /content/{id}
+    defaults:   { _controller: TecAytPortalBundle:Content:list }
+
 ## DOWNLOAD
 tec_ayt_portal_download:
     pattern:    /download/{id}/{class}
