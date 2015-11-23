@@ -41,4 +41,12 @@ class MainController extends Controller
 
         ));
     }
+
+    public function blogAction()
+    {
+
+        return $this->render('TecAytPortalBundle:Main:blog.html.twig', array(
+
+        ));
+    }
 }

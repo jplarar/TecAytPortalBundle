@@ -2626,3 +2626,17 @@ shortcodes page css
 .partner-img{
   width: 100%;
 }
+
+#document {
+  padding-bottom: 40px;
+  padding-top: 40px;
+}
+
+iframe {
+  overflow: scroll;
+  height: 100em;
+}
+
+#forum {
+  padding-top: 40px;
+}

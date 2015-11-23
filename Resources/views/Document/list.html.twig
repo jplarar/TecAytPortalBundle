@@ -1,0 +1,156 @@
+{% set navbarActive = 'document' %}
+{% extends 'TecAytPortalBundle:Common:layout.html.twig' %}
+
+{% block headerAssets %}
+{{ parent() }}
+
+    <link href="{{ asset('bundles/tecaytportal/css/fresh-bootstrap-table.css') }}" rel="stylesheet" />
+
+    <!-- Fonts and icons -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+
+{% endblock %}
+
+{% block content %}
+
+    <section id="document">
+        <div class="container">
+            {% if friendDocuments is defined %}
+                <div class="col-sm-12">
+                    <div class="box">
+                        <div class="box-header with-border">
+                            <h2 class="box-title">Documentos para Amigos Ama</h2>
+                        </div>
+                        <div class="box-body">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Description</th>
+                                    <th>File</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+
+                                {% for document in friendDocuments %}
+                                    <tr>
+                                        <td>{{ document.name }}</td>
+                                        <td>{{ document.description }}</td>
+                                        <td><a class="btn bg-navy btn-xs" href="{{ path('tec_ayt_portal_download', {'id': document.documentId, 'class': 'Document'}) }}" download>
+                                                <i class="fa fa-download"></i> Download</a></td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div><!-- /.box-body -->
+                    </div>
+                </div>
+            {% endif %}
+            {% if activeDocuments is defined %}
+                <div class="col-sm-12">
+                    <div class="box">
+                        <div class="box-header with-border">
+                            <h2 class="box-title">Documentos para Miembros Activos Ama</h2>
+                        </div>
+                        <div class="box-body">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Descripción</th>
+                                    <th>Archivo</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+
+                                {% for document in activeDocuments %}
+                                    <tr>
+                                        <td>{{ document.name }}</td>
+                                        <td>{{ document.description }}</td>
+                                        <td><a class="btn bg-navy btn-xs" href="{{ path('tec_ayt_portal_download', {'id': document.documentId, 'class': 'Document'}) }}" download>
+                                                <i class="fa fa-download"></i> Download</a></td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div><!-- /.box-body -->
+                    </div>
+                </div>
+            {% endif %}
+            <div class="col-sm-12">
+                <div class="box">
+                    <div class="box-header with-border">
+                        <h2 class="box-title">Documentos para todos los usuarios</h2>
+                    </div>
+                    <div class="box-body">
+                        <table class="table" id="fresh-table">
+                            <thead>
+                            <tr>
+                                <th data-field="name">Nombre</th>
+                                <th data-field="description">Descripción</th>
+                                <th data-field="file">Archivo</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            {% for document in freeDocuments %}
+                                <tr>
+                                    <td>{{ document.name }}</td>
+                                    <td>{{ document.description }}</td>
+                                    <td><a class="btn bg-navy btn-xs" href="{{ path('tec_ayt_portal_download', {'id': document.documentId, 'class': 'Document'}) }}" download>
+                                            <i class="fa fa-download"></i> Download</a></td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div><!-- /.box-body -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
+
+{% block footerAssets %}
+    {{ parent() }}
+
+    <script type="text/javascript" src="{{ asset('bundles/tecaytportal/js/bootstrap-table.js')}}"></script>
+
+    <script type="text/javascript">
+        var $table = $('#fresh-table'),
+                full_screen = true;
+
+        $().ready(function(){
+            $table.bootstrapTable({
+                toolbar: ".toolbar",
+
+                showRefresh: false,
+                search: false,
+                showToggle: true,
+                showColumns: true,
+                pagination: true,
+                striped: true,
+                sortable: true,
+                pageSize: 8,
+                pageList: [8,10,25,50,100],
+
+                formatShowingRows: function(pageFrom, pageTo, totalRows){
+                    //do nothing here, we don't want to show the text "showing x of y from..."
+                },
+                formatRecordsPerPage: function(pageNumber){
+                    return pageNumber + " rows visible";
+                },
+                icons: {
+                    refresh: 'fa fa-refresh',
+                    toggle: 'fa fa-th-list',
+                    columns: 'fa fa-columns',
+                    detailOpen: 'fa fa-plus-circle',
+                    detailClose: 'fa fa-minus-circle'
+                }
+            });
+        });
+
+    </script>
+
+{% endblock %}

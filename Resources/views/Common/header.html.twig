@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6 col-xs-4">
-                    <div class="top-number"><p><i class="fa fa-phone-square"></i>  +0123 456 70 90</p></div>
+                    <div class="top-number"><p><i class="fa fa-phone-square"></i> 81 147 48 655</p></div>
                 </div>
                 <div class="col-sm-6 col-xs-8">
                     <div class="social">
@@ -36,11 +36,11 @@
                     <li {% if navbarActive == 'home' %}class="active"{% endif %}><a href="{{ path('tec_ayt_portal_main_home') }}">Home</a></li>
                     <li {% if navbarActive == 'about' %}class="active"{% endif %}><a href="{{ path('tec_ayt_portal_main_about') }}">Nosotros</a></li>
                     <li {% if navbarActive == 'event' %}class="active"{% endif %}><a href="{{ path('tec_ayt_portal_event_list') }}">Eventos</a></li>
-                    <li {% if navbarActive == 'document' %}class="active"{% endif %}><a href="#">Documentos</a></li>
+                    <li {% if navbarActive == 'document' %}class="active"{% endif %}><a href="{{ path('tec_ayt_portal_docuemt_list') }}">Documentos</a></li>
                     <li {% if navbarActive == 'gallery' %}class="active"{% endif %}><a href="{{ path('tec_ayt_portal_album_list') }}">Galeria</a></li>
-                    <li {% if navbarActive == 'forum' %}class="active"{% endif %}><a href="#">Foro</a></li>
+                    <li {% if navbarActive == 'forum' %}class="active"{% endif %}><a href="{{ path('tec_ayt_portal_forum_list') }}">Foro</a></li>
                     <li {% if navbarActive == 'link' %}class="active"{% endif %}><a href="#">Links</a></li>
-                    <li {% if navbarActive == 'blog' %}class="active"{% endif %}><a href="#">Blog</a></li>
+                    <li {% if navbarActive == 'blog' %}class="active"{% endif %}><a href="{{ path('tec_ayt_portal_main_blog') }}">Blog</a></li>
                     <li {% if navbarActive == 'contact' %}class="active"{% endif %}><a href="{{ path('tec_ayt_portal_main_contact') }}">Contacto</a></li>
                 </ul>
             </div>

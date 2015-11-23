@@ -22,6 +22,10 @@ tec_ayt_portal_main_contact:
     pattern:    /contact
     defaults:   { _controller: TecAytPortalBundle:Main:contact }
 
+tec_ayt_portal_main_blog:
+    pattern:    /blog
+    defaults:   { _controller: TecAytPortalBundle:Main:blog }
+
 ## EVENT
 
 tec_ayt_portal_event_list:
@@ -39,6 +43,18 @@ tec_ayt_portal_album_list:
 tec_ayt_portal_content_list:
     pattern:    /content/{id}
     defaults:   { _controller: TecAytPortalBundle:Content:list }
+
+## DOCUMENT
+
+tec_ayt_portal_docuemt_list:
+    pattern:    /document
+    defaults:   { _controller: TecAytPortalBundle:Document:list }
+
+## FORUM
+
+tec_ayt_portal_forum_list:
+    pattern:    /forum
+    defaults:   { _controller: TecAytPortalBundle:Forum:list }
 
 ## DOWNLOAD
 tec_ayt_portal_download:
