@@ -41,8 +41,8 @@ class FileController extends Controller
     {
         // Check if file exists
         $file = $object->getFileName();
-        $path = $this->get('kernel')->getRootDir() . '/../../DeployAyt/ControlAyt/web/uploads/'. $file;
-        //$path = $this->get('kernel')->getRootDir() . '/../../control/web/uploads/'. $file;
+        //$path = $this->get('kernel')->getRootDir() . '/../../DeployAyt/ControlAyt/web/uploads/'. $file;
+        $path = $this->get('kernel')->getRootDir() . '/../../control/web/uploads/'. $file;
 
         if (!file_exists($path)) {
             throw $this->createNotFoundException(
