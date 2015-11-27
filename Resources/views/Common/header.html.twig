@@ -6,14 +6,18 @@
                     <div class="top-number"><p><i class="fa fa-phone-square"></i> 81 147 48 655</p></div>
                 </div>
                 <div class="col-sm-6 col-xs-8">
-                    <div class="social">
-                        <div class="search">
-                            <a href="#" id="unete"><b>UNETE</b></a>
-                        </div>
+                    <a class="social pull-right" href="https://www.facebook.com/AMA-y-Trasciende-AC-156507664393027/">
                         <ul class="social-share">
-                            <li><a href="https://www.facebook.com/AMA-y-Trasciende-AC-156507664393027/"><i class="fa fa-facebook"></i></a></li>
+                            <li><i class="fa fa-facebook"></i></li>
                         </ul>
-                    </div>
+                    </a>
+                    <b>
+                        {% if app.user and (is_granted('ROLE_FRIEND') or is_granted('ROLE_ACTIVE')) %}
+                            <a class="join pull-right" href="{{ path('tec_ayt_portal_user_view') }}"> PREFIL </a>
+                        {% else %}
+                            <a class="join pull-right" data-toggle="modal" href="javascript:void(0)" onclick="openLoginModal();"> INICIAR SESION </a>
+                        {% endif %}
+                    </b>
                 </div>
             </div>
         </div><!--/.container-->
@@ -33,7 +37,6 @@
 
             <div class="collapse navbar-collapse navbar-right">
                 <ul class="nav navbar-nav">
-                    <li {% if navbarActive == 'home' %}class="active"{% endif %}><a href="{{ path('tec_ayt_portal_main_home') }}">Home</a></li>
                     <li {% if navbarActive == 'about' %}class="active"{% endif %}><a href="{{ path('tec_ayt_portal_main_about') }}">Nosotros</a></li>
                     <li {% if navbarActive == 'event' %}class="active"{% endif %}><a href="{{ path('tec_ayt_portal_event_list') }}">Eventos</a></li>
                     <li {% if navbarActive == 'document' %}class="active"{% endif %}><a href="{{ path('tec_ayt_portal_docuemt_list') }}">Documentos</a></li>
@@ -46,5 +49,38 @@
             </div>
         </div><!--/.container-->
     </nav><!--/nav-->
+
+    <div class="modal fade login" id="loginModal">
+        <div class="modal-dialog login animated">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Iniciar Sesión</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="box">
+                        <div class="content">
+
+                            <div class="error"></div>
+                            <div class="form loginBox">
+                                <form method="post" action="{{ path('tec_ayt_portal_login_check') }}" accept-charset="UTF-8">
+                                    <input id="email" class="form-control" type="text" placeholder="Nombre de usuario (Username)" name="_username">
+                                    <input id="password" class="form-control" type="password" placeholder="Contraseña" name="_password">
+                                    <input class="btn btn-default btn-login" type="submit" value="Ingresar">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="forgot login-footer">
+                            <span>
+                                 <a href="{{ path('tec_ayt_portal_user_list') }}">Crear una Cuenta</a>
+                            </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </header><!--/header-->

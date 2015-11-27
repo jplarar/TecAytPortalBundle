@@ -1,0 +1,29 @@
+{% set navbarActive = '' %}
+{% extends 'TecAytPortalBundle:Common:layout.html.twig' %}
+
+{% block content %}
+    <section class="user-type">
+        <div class="container">
+            <div class="center wow fadeInDown event-title">
+                <h2>SELECCIONA UNO DE NUESTROS TIPOS DE USUARIO</h2>
+            </div>
+
+            <div class="col-md-4 col-xs-12 col-md-offset-1 col-xs-offset-0">
+                <img src="{{ asset('bundles/tecaytportal/images/oldsite/galerias.jpg')}}" alt="">
+                <h2>Socio Amigo AMA</h2>
+                <p>
+                    Socio virtual con registro en la pagina WEB recibe invitaciones a eventos, publicaciones sobre temas de interés para el adulto mayor y puede colaborar con publicaciones y propuestas a través de los medios digitales de la Asociación.   Puede residir en cualquiera lugar y no tiene compromiso de asistir a reuniones o cubrir cuotas de asociado.
+                </p>
+                <a class="btn btn-primary readmore pull-right wow fadeInDown" href="{{ path('tec_ayt_portal_user_process',{'type': 1}) }}">Resgitr Socio Amigo</a>
+            </div>
+            <div class="col-md-4 col-xs-12 col-md-offset-2 col-xs-offset-0">
+                <img src="{{ asset('bundles/tecaytportal/images/oldsite/galerias.jpg')}}" alt="">
+                <h2>Socios Activo AMA</h2>
+                <p>
+                    Miembro activo participa en las sesiones, colabora en comisiones y paga las cuotas de la Asociación.
+                </p>
+                <a class="btn btn-primary readmore pull-right wow fadeInDown" href="{{ path('tec_ayt_portal_user_process',{'type': 2}) }}">Registrar Socio Activo</a>
+            </div>
+        </div>
+    </section>
+{% endblock %}

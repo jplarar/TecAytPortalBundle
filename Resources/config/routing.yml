@@ -56,6 +56,22 @@ tec_ayt_portal_forum_list:
     pattern:    /forum
     defaults:   { _controller: TecAytPortalBundle:Forum:list }
 
+## USER
+
+tec_ayt_portal_user_list:
+    pattern:    /user
+    defaults:   { _controller: TecAytPortalBundle:User:list }
+
+tec_ayt_portal_user_profile:
+    pattern:    /user/profile
+    defaults:   { _controller: TecAytPortalBundle:User:profile }
+
+tec_ayt_portal_user_process:
+    pattern:    /user/{type}/new/{id}
+    defaults:   { _controller: TecAytPortalBundle:User:process, id: 0 }
+    requirements:
+        id:     \d+
+        type:     \d+
 ## DOWNLOAD
 tec_ayt_portal_download:
     pattern:    /download/{id}/{class}

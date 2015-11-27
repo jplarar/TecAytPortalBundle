@@ -1,0 +1,11 @@
+{% set navbarActive = '' %}
+{% extends 'TecAytPortalBundle:Common:layout.html.twig' %}
+
+{% block content %}
+    <section class="user-type">
+        <div class="container">
+            {% form_theme form 'TecAytPortalBundle:Form:fields.html.twig' %}
+            {{ form(form) }}
+        </div>
+    </section>
+{% endblock %}
