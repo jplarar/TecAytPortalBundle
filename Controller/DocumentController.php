@@ -18,9 +18,9 @@ class DocumentController extends Controller
         /** @var \Tec\Ayt\CoreBundle\Entity\Document $document */
         foreach ($documents as $document) {
             $role = $document->getRole();
-            if ($role == 'Amigo') {
+            if ($role == 1) {
                 $friendDocuments[] = $document;
-            } elseif ($role == 'Activo') {
+            } elseif ($role == 2) {
                 $activeDocuments[] = $document;
             } else {
                 $freeDocuments[] = $document;

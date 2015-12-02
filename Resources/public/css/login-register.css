@@ -158,10 +158,9 @@
     width: 100%;
 }
 .login .btn-login, .registerBox .btn-register{
-    background-color: #00BBFF;
-    border-color: #00BBFF;
+    background-color: #FAAC58;
     border-width: 0;
-    color: #FFFFFF;
+    color: #000;
     display: block;
     margin: 0 auto;
     padding: 15px 50px;
@@ -169,7 +168,7 @@
     width: 100%;
 }
 .login .btn-login:hover, .registerBox .btn-register:hover{
-    background-color: #00A4E4;
+    background-color: #d56e22;
     color: #FFFFFF;
 }
 .login .form-control{

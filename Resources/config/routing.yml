@@ -1,7 +1,11 @@
 ##  SECURITY
 tec_ayt_portal_login:
     pattern:    /login
-    defaults:   { _controller: TecAytPortalBundle:Security:login }
+    defaults:   { _controller: TecAytPortalBundle:Security:error }
+
+tec_ayt_portal_login_success:
+    pattern:    /success
+    defaults:   { _controller: TecAytPortalBundle:Security:success }
     
 tec_ayt_portal_login_check:
     pattern:    /login/check
