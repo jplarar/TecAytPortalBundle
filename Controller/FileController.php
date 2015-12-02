@@ -43,9 +43,9 @@ class FileController extends Controller
         $file = $object->getFileName();
         //CHANGE THIS TO DEV OR PRODUCTION MODE
         //DEV
-        $path = $this->get('kernel')->getRootDir() . '/../../DeployAyt/ControlAyt/web/uploads/'. $file;
+        //$path = $this->get('kernel')->getRootDir() . '/../../DeployAyt/ControlAyt/web/uploads/'. $file;
         //PRODUCTION
-        //$path = $this->get('kernel')->getRootDir() . '/../../control/web/uploads/'. $file;
+        $path = $this->get('kernel')->getRootDir() . '/../../control/web/uploads/'. $file;
 
         if (!file_exists($path)) {
             throw $this->createNotFoundException(
