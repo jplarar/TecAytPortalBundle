@@ -49,4 +49,34 @@ class MainController extends Controller
 
         ));
     }
+    public function sendmailAction()
+    {
+        $message = \Swift_Message::newInstance()
+        ->setSubject($_POST["subject"])
+        ->setFrom('send@example.com')
+        ->setTo('linknmasters@gmail.com')
+        ->setBody($_POST["message"],
+            'text/plain'
+        )
+        /*
+         * If you also want to include a plaintext version of the message
+        ->addPart(
+            $this->renderView(
+                'Emails/registration.txt.twig',
+                array('name' => $name)
+            ),
+            'text/plain'
+        )
+        */
+    ;
+    $this->get('mailer')->send($message);
+
+    return $this->render(...);
+        
+        $this->addFlash(
+        'notice',
+        'Tu mensaje ha sido enviado, pronto nos pondremos en contacto contigo'
+        );
+    }
+    
 }
