@@ -26,6 +26,10 @@ tec_ayt_portal_main_contact:
     pattern:    /contact
     defaults:   { _controller: TecAytPortalBundle:Main:contact }
 
+tec_ayt_portal_main_sendmail:
+    pattern:    /sendmail
+    defaults: {_controller: TecAytPortalBundle:Main:sendmail }
+
 tec_ayt_portal_main_blog:
     pattern:    /blog
     defaults:   { _controller: TecAytPortalBundle:Main:blog }
