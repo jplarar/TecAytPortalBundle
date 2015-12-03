@@ -15,7 +15,7 @@
                         {% if app.user.role is defined %}
                             <a class="join pull-right" href="{{ path('tec_ayt_portal_logout') }}"> CERRAR SESION </a>
                         {% else %}
-                            <a class="join pull-right" href="user"> UNETE </a>
+                            <a class="join pull-right" href="{{ path('tec_ayt_portal_user_list') }}"> UNETE </a>
                             <a class="join pull-right" data-toggle="modal" href="javascript:void(0)" onclick="openLoginModal();"> INICIAR SESION </a>
                         {% endif %}
                     </b>
@@ -43,7 +43,7 @@
                     <li {% if navbarActive == 'document' %}class="active"{% endif %}><a href="{{ path('tec_ayt_portal_docuemt_list') }}">Documentos</a></li>
                     <li {% if navbarActive == 'gallery' %}class="active"{% endif %}><a href="{{ path('tec_ayt_portal_album_list') }}">Galeria</a></li>
                     <li {% if navbarActive == 'forum' %}class="active"{% endif %}><a href="{{ path('tec_ayt_portal_forum_list') }}">Foro</a></li>
-                    <li {% if navbarActive == 'link' %}class="active"{% endif %}><a href="#">Links</a></li>
+                    <li {% if navbarActive == 'link' %}class="active"{% endif %}><a href="{{ path('tec_ayt_portal_link_list') }}">Links</a></li>
                     <li {% if navbarActive == 'blog' %}class="active"{% endif %}><a href="{{ path('tec_ayt_portal_main_blog') }}">Blog</a></li>
                     <li {% if navbarActive == 'contact' %}class="active"{% endif %}><a href="{{ path('tec_ayt_portal_main_contact') }}">Contacto</a></li>
                 </ul>
