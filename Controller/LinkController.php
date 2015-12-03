@@ -4,7 +4,7 @@ namespace Tec\Ayt\PortalBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class LinksController extends Controller
+class LinkController extends Controller
 {
    public function listAction()
    {
