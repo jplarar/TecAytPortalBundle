@@ -16,12 +16,12 @@
                                     <div class="entry-meta">
                                         <span id="publish_date">{{ topic.timestamp|date('j M') }}</span>
                                         <span><i class="fa fa-user"></i> <a href="#">{{ topic.userId.username }}</a></span>
-                                        <span><i class="fa fa-comment"></i> <a href="blog-item.html#comments">{{ topic.getRepliesCount() }} Respuestas</a></span>
+                                        <span><i class="fa fa-comment"></i> <a href="#">{{ topic.getRepliesCount() }} Respuestas</a></span>
                                     </div>
                                 </div>
 
                                 <div class="col-xs-12 col-sm-10 blog-content">
-                                    <h2><a href="blog-item.html">{{ topic.title }}</a></h2>
+                                    <h2><a href="#">{{ topic.title }}</a></h2>
                                     <h3>
                                         {{ topic.content }}
                                     </h3>

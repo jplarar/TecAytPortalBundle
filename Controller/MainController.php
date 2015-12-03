@@ -54,7 +54,9 @@ class MainController extends Controller
     public function sendmailAction(Request $request) //Necesita correcciones y el server no esta mandando mails, marco error al tratar.
     {
 
-        //$request->get
+        $data = $request->request->all();
+        exit(\Doctrine\Common\Util\Debug::dump($data));
+
 
         $message = \Swift_Message::newInstance()
         ->setSubject("test")
