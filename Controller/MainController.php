@@ -75,8 +75,8 @@ class MainController extends Controller
         'notice',
         'Tu mensaje ha sido enviado, pronto nos pondremos en contacto contigo'
         );
+        
+        return $this->render("OK");
     }
-    
-    return $this->render("OK");
     
 }
