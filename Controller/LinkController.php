@@ -9,20 +9,20 @@ class LinkController extends Controller
    public function listAction()
    {
 
-       $documents = $this->getDoctrine()->getRepository('Tec\Ayt\CoreBundle\Entity\Link')->findAll();
+       $links = $this->getDoctrine()->getRepository('Tec\Ayt\CoreBundle\Entity\Link')->findAll();
 
 
-       $freeLink = array();
+       $freeLinks = array();
 
        /** @var \Tec\Ayt\CoreBundle\Entity\Link $Link */
-       foreach ($link as $link) {
+       foreach ($links as $link) {
 
-               $freeLink[] = $link;
+               $freeLinks[] = $link;
 
        }
 
        return $this->render('TecAytPortalBundle:Link:list.html.twig', array(
-           'freeLink' => $freeLink
+           'freeLinks' => $freeLinks
        ));
    }
 }
