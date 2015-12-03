@@ -71,7 +71,7 @@ class MainController extends Controller
     ;
     $this->get('mailer')->send($message);
         
-        $this->addFlash(
+        return $this->addFlash(
         'notice',
         'Tu mensaje ha sido enviado, pronto nos pondremos en contacto contigo'
         );
