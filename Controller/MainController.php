@@ -5,6 +5,8 @@ namespace Tec\Ayt\PortalBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
+use Symfony\Component\HttpFoundation\Request;
+
 class MainController extends Controller
 {
     public function homeAction()
@@ -49,8 +51,11 @@ class MainController extends Controller
 
         ));
     }
-    public function sendmailAction() //Necesita correcciones y el server no esta mandando mails, marco error al tratar.
+    public function sendmailAction(Request $request) //Necesita correcciones y el server no esta mandando mails, marco error al tratar.
     {
+
+        //$request->get
+
         $message = \Swift_Message::newInstance()
         ->setSubject("test")
         ->setFrom('send@example.com')
@@ -69,12 +74,22 @@ class MainController extends Controller
         )
         */
     ;
-    $this->get('mailer')->send($message);
-        
-        $this->addFlash(
-        'notice',
-        'Tu mensaje ha sido enviado, pronto nos pondremos en contacto contigo'
-        );
+        $error = false;
+        try {
+            $this->get('mailer')->send($message);
+        } catch (\Swift_TransportException $e) {
+            $error = true;
+            $this->addFlash(
+                'notice',
+                'Tu mensaje ha sido enviado, pronto nos pondremos en contacto contigo'
+            );
+        }
+        if (!$error) {
+            $this->addFlash(
+                'notice',
+                'Tu mensaje ha sido enviado, pronto nos pondremos en contacto contigo'
+            );
+        }
         
         return $this->render('TecAytPortalBundle:Main:contact.html.twig',array());
     }
