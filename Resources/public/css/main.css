@@ -2728,3 +2728,13 @@ iframe {
   margin-top: -100px;
   margin-left: -100px;
 }
+
+.forum_view {
+  padding-bottom: 40px;
+}
+
+.profile-img {
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+

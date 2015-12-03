@@ -60,11 +60,21 @@ tec_ayt_portal_link_list:
     pattern:    /link
     defaults:   {_controller: TecAytPortalBundle:Link:list }
 
-## FORUM
+## TOPIC
 
 tec_ayt_portal_forum_list:
     pattern:    /forum
-    defaults:   { _controller: TecAytPortalBundle:Forum:list }
+    defaults:   { _controller: TecAytPortalBundle:Topic:list }
+
+tec_ayt_portal_forum_process:
+    pattern:    /forum/process/{id}
+    defaults:   { _controller: TecAytPortalBundle:Topic:process, id: 0 }
+    requirements:
+        id:     \d+
+
+tec_ayt_portal_forum_view:
+    pattern:    /forum/view/{id}
+    defaults:   { _controller: TecAytPortalBundle:Topic:view }
 
 ## USER
 
@@ -73,7 +83,7 @@ tec_ayt_portal_user_list:
     defaults:   { _controller: TecAytPortalBundle:User:list }
 
 tec_ayt_portal_user_profile:
-    pattern:    /user/profile
+    pattern:    /user/profile/{id}
     defaults:   { _controller: TecAytPortalBundle:User:profile }
 
 tec_ayt_portal_user_process:

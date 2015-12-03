@@ -84,7 +84,7 @@ class UserController extends Controller
             );
 
             return $this->redirect(
-                $this->generateUrl('tec_ayt_portal_user_profile')
+                $this->generateUrl('tec_ayt_portal_user_profile', array('id' => $user->getUserId()))
             );
         }
 
@@ -149,10 +149,11 @@ class UserController extends Controller
         ));
     }
 
-    public function profileAction()
+    public function profileAction($id)
     {
         /** @var User $user */
-        $user = $this->getUser();
+        $user = $this->getDoctrine()->getRepository('Tec\Ayt\CoreBundle\Entity\User')->find($id);
+
 
         return $this->render('TecAytPortalBundle:User:view.html.twig', array(
             'user' => $user

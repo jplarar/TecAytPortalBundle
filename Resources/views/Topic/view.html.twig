@@ -2,19 +2,15 @@
 {% extends 'TecAytPortalBundle:Common:layout.html.twig' %}
 
 {% block content %}
-    <section id="forum" class="container">
+    <section id="forum" class="container forum_view">
         <div class="center">
             <h2>Foro AMA y trasciende</h2>
-            {% if app.user.role is defined %}
-            <a class="btn btn-primary readmore pull-right" href="{{ path('tec_ayt_portal_forum_process') }}">Crear un tema nuevo <i class="fa fa-plus"></i></a>
-            {% endif %}
         </div>
 
         <div class="blog">
             <div class="row">
                 <div class="col-md-12">
                     <div class="blog-item">
-                        {% for topic in topics %}
                             <div class="row">
                                 <div class="col-xs-12 col-sm-2 text-center">
                                     <div class="entry-meta">
@@ -29,23 +25,36 @@
                                     <h3>
                                         {{ topic.content }}
                                     </h3>
-                                    <a class="btn btn-primary readmore" href="{{ path('tec_ayt_portal_forum_view', {'id': topic.topicId}) }}">Ver respuestas <i class="fa fa-angle-right"></i></a>
                                 </div>
                             </div>
-                        {% endfor %}
                     </div><!--/.blog-item-->
-                    {#
-                    <ul class="pagination pagination-lg">
-                        <li><a href="#"><i class="fa fa-long-arrow-left"></i>Previous Page</a></li>
-                        <li class="active"><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li><a href="#">Next Page<i class="fa fa-long-arrow-right"></i></a></li>
-                    </ul><!--/.pagination-->
-                    #}
-                </div><!--/.col-md-8-->
+                    <h1 id="comments_title">{{ topic.getRepliesCount() }} Respuestas</h1>
+
+                    {% for reply in replies %}
+                        <div class="media comment_section">
+                            <div class="pull-left post_comments">
+                                <a href="#"><img src="{{ asset('bundles/tecaytportal/images/icon-user.png')}}" class="img-circle" alt=""></a>
+                            </div>
+                            <div class="media-body post_reply_comments">
+                                <h3>{{ reply.userId.username }}</h3>
+                                <h4>{{ reply.timestamp|date('F j, Y, g:i a') }}</h4>
+                                <p>{{ reply.content }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                    {% if app.user.role is defined %}
+                        <div class="message_heading">
+                            <h4>Dejanos tu respuesta</h4>
+                            <p>Apoya a la comunidad de Ama y Trasciende</p>
+                        </div>
+                        <div class="wow fadeInDown">
+                            {% form_theme form 'TecAytPortalBundle:Form:fields.html.twig' %}
+                            {{ form(form) }}
+                        </div>
+                    {% endif %}
+
+                </div><!--/.col-md-12-->
             </div><!--/.row-->
         </div>
     </section><!--/#blog-->

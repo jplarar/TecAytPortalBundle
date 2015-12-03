@@ -4,7 +4,7 @@
 
 {% block form -%}
     {{ form_start(form) }}
-    <div class="box-body col-md-6">
+    <div class="box-body col-md-8">
         {{- form_widget(form) -}}
     </div>
     {{ form_end(form) }}
@@ -146,7 +146,7 @@
 
 {% block submit_widget -%}
     {% set type = type|default('submit') %}
-    {% set attr = attr|merge({'class': (attr.class|default('') ~ ' btn btn-info pull-right')|trim}) %}
+    {% set attr = attr|merge({'class': (attr.class|default('') ~ ' btn btn-primary readmore pull-right')|trim}) %}
     <div class="box-footer">
         {{- block('button_widget') -}}
     </div>
