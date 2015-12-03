@@ -15,6 +15,7 @@
                         {% if app.user.role is defined %}
                             <a class="join pull-right" href="{{ path('tec_ayt_portal_logout') }}"> CERRAR SESION </a>
                         {% else %}
+                            <a class="join pull-right" href="user"> UNETE </a>
                             <a class="join pull-right" data-toggle="modal" href="javascript:void(0)" onclick="openLoginModal();"> INICIAR SESION </a>
                         {% endif %}
                     </b>
