@@ -49,7 +49,7 @@ class MainController extends Controller
 
         ));
     }
-    public function sendmailAction()
+    public function sendmailAction() //Necesita correcciones y el server no esta mandando mails, marco error al tratar.
     {
         $message = \Swift_Message::newInstance()
         ->setSubject("test")
