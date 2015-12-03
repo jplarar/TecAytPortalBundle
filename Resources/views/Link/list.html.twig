@@ -1,0 +1,89 @@
+{% set navbarActive = 'links' %}
+{% extends 'TecAytPortalBundle:Common:layout.html.twig' %}
+
+{% block headerAssets %}
+{{ parent() }}
+
+   <link href="{{ asset('bundles/tecaytportal/css/fresh-bootstrap-table.css') }}" rel="stylesheet" />
+
+   <!-- Fonts and icons -->
+   <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+   <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+
+{% endblock %}
+
+{% block content %}
+   <section id="document">
+       <div class="container">
+
+               <div class="col-sm-12">
+                   <div class="box">
+                       <div class="box-header with-border">
+                           <h2 class="box-title">Links para todos los usuarios</h2>
+                       </div>
+                       <div class="box-body">
+                           <table class="table table-striped">
+                               <thead>
+                               <tr>
+                                   <th>URL</th>
+                                   <th>Description</th>
+                               </tr>
+                               </thead>
+                               <tbody>
+
+                               {% for links in links %}
+                                   <tr>
+                                       <td>{{ link.name }}</td>
+                                       <td>{{ link.description }}</td>
+                                   </tr>
+                               {% endfor %}
+                               </tbody>
+                           </table>
+                       </div><!-- /.box-body -->
+                   </div>
+               </div>
+
+
+{% endblock %}
+
+{% block footerAssets %}
+   {{ parent() }}
+
+   <script type="text/javascript" src="{{ asset('bundles/tecaytportal/js/bootstrap-table.js')}}"></script>
+
+   <script type="text/javascript">
+       var $table = $('#fresh-table'),
+               full_screen = true;
+
+       $().ready(function(){
+           $table.bootstrapTable({
+               toolbar: ".toolbar",
+
+               showRefresh: false,
+               search: false,
+               showToggle: true,
+               showColumns: true,
+               pagination: true,
+               striped: true,
+               sortable: true,
+               pageSize: 8,
+               pageList: [8,10,25,50,100],
+
+               formatShowingRows: function(pageFrom, pageTo, totalRows){
+                   //do nothing here, we don't want to show the text "showing x of y from..."
+               },
+               formatRecordsPerPage: function(pageNumber){
+                   return pageNumber + " rows visible";
+               },
+               icons: {
+                   refresh: 'fa fa-refresh',
+                   toggle: 'fa fa-th-list',
+                   columns: 'fa fa-columns',
+                   detailOpen: 'fa fa-plus-circle',
+                   detailClose: 'fa fa-minus-circle'
+               }
+           });
+       });
+
+   </script>
+{% endblock %}
