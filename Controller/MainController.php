@@ -52,10 +52,10 @@ class MainController extends Controller
     public function sendmailAction()
     {
         $message = \Swift_Message::newInstance()
-        ->setSubject($_POST["subject"])
+        ->setSubject("test")
         ->setFrom('send@example.com')
         ->setTo('linknmasters@gmail.com')
-        ->setBody($_POST["message"],
+        ->setBody("message"],
             'text/plain'
         )
         /*
