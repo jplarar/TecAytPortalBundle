@@ -70,8 +70,6 @@ class MainController extends Controller
         */
     ;
     $this->get('mailer')->send($message);
-
-    return $this->render(...);
         
         $this->addFlash(
         'notice',
