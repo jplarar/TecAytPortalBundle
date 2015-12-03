@@ -78,11 +78,6 @@ class UserController extends Controller
             // Persist to database using Entity Manager
             $em->flush();
 
-            $this->addFlash(
-                'notice',
-                'Your changes were saved!'
-            );
-
             return $this->redirect(
                 $this->generateUrl('tec_ayt_portal_user_profile', array('id' => $user->getUserId()))
             );
@@ -132,11 +127,6 @@ class UserController extends Controller
             // Persist to database using Entity Manager
             $em = $this->getDoctrine()->getManager();
             $em->flush();
-
-            $this->addFlash(
-                'notice',
-                'Your changes were saved!'
-            );
 
             return $this->redirect(
                 $this->generateUrl('tec_ayt_admin_user_list')

@@ -56,11 +56,6 @@ class TopicController extends Controller
             $em->persist($topic);
             $em->flush();
 
-            $this->addFlash(
-                'notice',
-                'Your changes were saved!'
-            );
-
             return $this->redirect(
                 $this->generateUrl('tec_ayt_portal_forum_view', array('id' => $topic->getTopicId()))
             );
