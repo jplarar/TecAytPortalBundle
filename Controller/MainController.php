@@ -55,7 +55,7 @@ class MainController extends Controller
         ->setSubject("test")
         ->setFrom('send@example.com')
         ->setTo('linknmasters@gmail.com')
-        ->setBody("message"],
+        ->setBody("message",
             'text/plain'
         )
         /*
