@@ -53,6 +53,12 @@ tec_ayt_portal_content_list:
 tec_ayt_portal_docuemt_list:
     pattern:    /document
     defaults:   { _controller: TecAytPortalBundle:Document:list }
+    
+## LINK
+
+tec_ayt_portal_link_list:
+    pattern:    /link
+    defaults:   {_controller: TecAytPortalBundle:Link:list }
 
 ## FORUM
 
