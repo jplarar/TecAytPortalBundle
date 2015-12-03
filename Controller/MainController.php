@@ -76,7 +76,7 @@ class MainController extends Controller
         'Tu mensaje ha sido enviado, pronto nos pondremos en contacto contigo'
         );
         
-        return $this->render("OK");
+        return $this->render('TecAytPortalBundle:Main:contact.html.twig',array());
     }
     
 }
