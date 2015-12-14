@@ -33,31 +33,6 @@
     </div><!--/.container-->
 </section><!--/#feature-->
 
-<section id="recent-works">
-    <div class="container">
-        <div class="center wow fadeInDown">
-            <h2>Imágenes Recientes</h2>
-        </div>
-
-        <div class="row">
-            {% for content in contents %}
-            <div class="col-xs-12 col-sm-4 col-md-3">
-                <div class="recent-work-wrap">
-                    <img class="img-responsive gallery" src="{{ path('tec_ayt_portal_download', {'id': content.contentId, 'class': 'Content'}) }}" alt="">
-                    <div class="overlay">
-                        <div class="recent-work-inner">
-                            <h3><a href="#">{{ content.name }}</a> </h3>
-                            <p>{{ content.description }}</p>
-                            <a class="preview" href="{{ path('tec_ayt_portal_download', {'id': content.contentId, 'class': 'Content'}) }}" rel="prettyPhoto"><i class="fa fa-eye"></i> Ampliar imagen</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-        </div><!--/.row-->
-    </div><!--/.container-->
-</section><!--/#recent-works-->
-
 <section id="services" class="service-item">
     <div class="container">
         <div class="center wow fadeInDown">
@@ -78,6 +53,9 @@
 
 <section id="content">
     <div class="container">
+        <div class="center wow fadeInDown">
+            <h2>UNETE A AMA</h2>
+        </div>
         <div class="row">
             <div class="col-xs-12 col-sm-12 wow fadeInDown">
                 <div class="tab-wrap">
@@ -143,6 +121,31 @@
         </div><!--/.row-->
     </div><!--/.container-->
 </section><!--/#content-->
+
+    <section id="recent-works">
+        <div class="container">
+            <div class="center wow fadeInDown">
+                <h2>Imágenes Recientes</h2>
+            </div>
+
+            <div class="row">
+                {% for content in contents %}
+                    <div class="col-xs-12 col-sm-4 col-md-3">
+                        <div class="recent-work-wrap">
+                            <img class="img-responsive gallery" src="{{ path('tec_ayt_portal_download', {'id': content.contentId, 'class': 'Content'}) }}" alt="">
+                            <div class="overlay">
+                                <div class="recent-work-inner">
+                                    <h3><a href="#">{{ content.name }}</a> </h3>
+                                    <p>{{ content.description }}</p>
+                                    <a class="preview" href="{{ path('tec_ayt_portal_download', {'id': content.contentId, 'class': 'Content'}) }}" rel="prettyPhoto"><i class="fa fa-eye"></i> Ampliar imagen</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div><!--/.row-->
+        </div><!--/.container-->
+    </section><!--/#recent-works-->
 
 <section id="partner">
     <div class="container">
