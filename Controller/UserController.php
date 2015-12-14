@@ -64,6 +64,27 @@ class UserController extends Controller
             $em = $this->getDoctrine()->getManager();
             ## Extend the default form validation
             if($user->getUserId() <= 0){
+                if ($user->getRole() == 'ROLE_ACTIVE') {
+                    $user->setIsActive(0);
+
+                    // Build message object
+                    $message = \Swift_Message::newInstance()
+                        ->setEncoder(\Swift_Encoding::get8BitEncoding()) // Disable Quoted-Printable headers (they mess up HTML)
+                        ->setSubject('Nuevo Usuario Activo')
+                        ->setFrom('amaytrasciende@gmail.com')
+                        ->setTo('amaytrasciende@gmail.com')
+                        ->setBody(
+                            $this->renderView(
+                            // app/Resources/views/Emails/registration.html.twig
+                                'TecAytPortalBundle:Email:new.html.twig',
+                                array('user' => $user)
+                            ),
+                            'text/html'
+                        );
+                    $mailer = $this->get('mailer');
+                    $mailer->send($message);
+
+                }
                 // Load security encoder
                 $factory = $this->get('security.encoder_factory');
 

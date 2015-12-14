@@ -5,10 +5,16 @@
     <section class="user-type">
         <div class="center wow fadeInDown">
             <h2>¡Felicidades {{ user.fullName }}!</h2>
-            <p>Tu usuario {{ user.username }} ha sido creado</p>
-            <p>Ya formas parte de la comunidad Ama y Trasciende</p>
-            <img class="img-circle profile-img" height="200px" src="{{ asset('bundles/tecaytportal/images/icon-user.png')}}">
-            <p>Inicia sesion para disfrutar de los beneficios de se parte de Ama y Trasciende</p>
+            {% if user.role == 'ROLE_FRIEND' %}
+                <p>Tu usuario {{ user.username }} ha sido creado</p>
+                <p>Ya formas parte de la comunidad Ama y Trasciende</p>
+                <img class="img-circle profile-img" height="200px" src="{{ asset('bundles/tecaytportal/images/icon-user.png')}}">
+                <p>Inicia sesion para disfrutar de los beneficios de se parte de Ama y Trasciende</p>
+            {% else %}
+                <p>Tu solicitud esta siendo procesada</p>
+                <p>Dentro de poco nos pondremos en contacto contigo</p>
+                <img class="img-circle profile-img" height="200px" src="{{ asset('bundles/tecaytportal/images/icon-user.png')}}">
+            {% endif %}
         </div>
     </section>
 {% endblock %}
