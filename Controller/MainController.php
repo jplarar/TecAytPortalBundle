@@ -18,7 +18,7 @@ class MainController extends Controller
         $repository = $this->getDoctrine()->getRepository('Tec\Ayt\CoreBundle\Entity\Content');
         $query = $repository->createQueryBuilder('c');
         $query->orderBy('c.timestamp', 'DESC')
-            ->getMaxResults(8);
+            ->setMaxResults(8);
         $contents = $query->getQuery()->getResult();
 
         return $this->render('TecAytPortalBundle:Main:home.html.twig', array(
